@@ -12,5 +12,26 @@ namespace MusicPlayer
         public string Name;
         public Artist Artist;
         public Album Album;
+        public bool _isliked;
+
+
+
+        public void Dislike()
+        {
+            if (_isliked == false)
+            {
+               var a = 0;
+            }
+        }
+
+        public void Like()
+        {
+            if (_isliked == true)
+            {
+                var a = 1;
+            }
+        }
+
+
     }
 }

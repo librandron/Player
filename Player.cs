@@ -14,7 +14,7 @@ namespace MusicPlayer
         private bool _isLocked;
 
         private bool _isPlaying;
-
+         
 
         private int _volume;
         public int Volume
