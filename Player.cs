@@ -82,6 +82,7 @@ namespace MusicPlayer
             }
         }
 
+
         public void Stop()
         {
             if (_isLocked)
