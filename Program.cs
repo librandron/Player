@@ -21,20 +21,20 @@ namespace MusicPlayer
 
 //            TraceInfo(player);
 
-            player.Play();
-            player.VolumeUp();
-            Console.WriteLine(player.Volume);
+            //player.Play();
+            //player.VolumeUp();
+            //Console.WriteLine(player.Volume);
 
-            player.VolumeChange(-300);
-            Console.WriteLine(player.Volume);
+            //player.VolumeChange(-300);
+            //Console.WriteLine(player.Volume);
 
-            player.VolumeChange(300);
-            Console.WriteLine(player.Volume);
+            //player.VolumeChange(300);
+            //Console.WriteLine(player.Volume);
 
             /*player.Volume = -25;
             Console.WriteLine(player.Volume);
             */
-            player.Stop();
+            //player.Stop();
 
 
             var randSong = CreateSong();
@@ -46,8 +46,8 @@ namespace MusicPlayer
             
            
             
-
-
+            
+            
             Console.ReadLine();
         }
 
@@ -100,7 +100,7 @@ namespace MusicPlayer
         {
             Console.WriteLine(player.Songs[0].Artist.Name);
             Console.WriteLine(player.Songs[0].Duration);
-            Console.WriteLine(player.Songs.Length);
+            Console.WriteLine(player.Songs.Count);
             Console.WriteLine(player.Volume);
         }
 
