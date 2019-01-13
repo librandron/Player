@@ -12,11 +12,34 @@ namespace MusicPlayer
         public string Name;
         public Artist Artist;
         public Album Album;
+        public bool _isLiked;
+
 
         public int CompareTo(object obj)
         {
             return this.Name?.CompareTo((obj as Song).Name) ?? 0;
             
         }
+
+        [Flags]
+        enum Genres {
+            Rock = 0b00000001,
+            Classic = 0b00000010,
+            Rap = 0b00000100,
+            Electro = 0b00001000,
+            Country = 0b00010000
+        };
+
+        public bool Like()
+        {
+           return _isLiked = true;
+        }
+
+        public bool DisLike()
+        {
+            return _isLiked = false;
+        }
+
+
     }
 }

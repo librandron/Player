@@ -77,11 +77,22 @@ namespace MusicPlayer
             _isPlaying = true;
             for (int i = 0; i < Songs.Count; i++)
             {
-                Console.WriteLine($"Player is playing: {Songs[i].Name}, duration: {Songs[i].Duration}");
-                System.Threading.Thread.Sleep(1000);
+                if (i % 2 == 0) { Songs[i].DisLike(); }                
+                if (Songs[i]._isLiked == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Player is playing: {Songs[i].Name}, duration: {Songs[i].Duration}");
+                    System.Threading.Thread.Sleep(1000);
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Player is playing: {Songs[i].Name}, duration: {Songs[i].Duration}");
+                    System.Threading.Thread.Sleep(1000);
+                }
+
             }
         }
-
 
         public void Stop()
         {
