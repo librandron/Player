@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicPlayer.extentions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace MusicPlayer
         private bool _isLocked;
 
         private bool _isPlaying;
-
+         
 
         private int _volume;
         public int Volume
@@ -41,7 +42,7 @@ namespace MusicPlayer
             }
         }
 
-        public Song[] Songs { get; private set; }
+        public List<Song> Songs { get; private set; } = new List<Song>();
 
         public void VolumeUp()
         {
@@ -74,12 +75,13 @@ namespace MusicPlayer
                 return;
             }
             _isPlaying = true;
-            for (int i = 0; i < Songs.Length; i++)
+            for (int i = 0; i < Songs.Count; i++)
             {
                 Console.WriteLine($"Player is playing: {Songs[i].Name}, duration: {Songs[i].Duration}");
                 System.Threading.Thread.Sleep(1000);
             }
         }
+
 
         public void Stop()
         {
@@ -104,7 +106,22 @@ namespace MusicPlayer
 
         public void Add(params Song[] songArr)
         {
-            Songs = songArr;
+            Songs.AddRange(songArr);
+        }
+
+        //SHUFFLE
+        public void Shuffle()
+        {
+            this.Songs.Shuffle();
+            
+        }
+
+        public void Sort()
+        {
+
+            Songs.Sort();
+
+
         }
     }
 }
