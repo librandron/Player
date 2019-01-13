@@ -12,6 +12,8 @@ namespace MusicPlayer
         public string Name;
         public Artist Artist;
         public Album Album;
+        public bool _isLiked;
+
 
         public int CompareTo(object obj)
         {
@@ -28,8 +30,16 @@ namespace MusicPlayer
             Country = 0b00010000
         };
 
+        public bool Like()
+        {
+           return _isLiked = true;
+        }
 
-       
+        public bool DisLike()
+        {
+            return _isLiked = false;
+        }
+
 
     }
 }

@@ -15,6 +15,9 @@ namespace MusicPlayer
             int min;
             int max;
             int total = 0;
+
+           
+
             player.Add(GetSongsData(out min, out max, ref total));
 
             Console.WriteLine($"Min = {min}, max = {max}, total = {total}");
@@ -82,9 +85,10 @@ namespace MusicPlayer
                     Duration = random.Next(1000),
                     Name = $"New song {i}",
                     Album = album,
-                    Artist = artist
+                    Artist = artist,
                 };
                 songs[i] = song;
+               
 
                 totalDuration += songs[i].Duration;
                 if (songs[i].Duration < minDuration)
@@ -92,6 +96,7 @@ namespace MusicPlayer
                     minDuration = song.Duration;
                 }
                 maxDuration = Math.Max(maxDuration, song.Duration);
+               
             }
             return songs;
         }
@@ -117,5 +122,11 @@ namespace MusicPlayer
         {
             return new Song { Name = newName, Duration = newDuration };
         }
+
+        public static Song CreateSong(string newName, int newDuration, bool new_isLiked)
+        {
+            return new Song { Name = newName, Duration = newDuration, _isLiked = new_isLiked };
+        }
+
     }
 }
